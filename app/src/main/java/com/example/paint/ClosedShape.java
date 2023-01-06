@@ -15,7 +15,7 @@ public class ClosedShape extends Shape{
     public void updatePoint(int xe, int ye) {
 
     }
-    public  int GetArea(){
+    public double GetArea(){
         return 0;
     }
 

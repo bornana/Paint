@@ -133,7 +133,6 @@ public class PaintView extends View {
     }
     public void WidthMin(){
         width--;
-        DelSmalls();
     }
     public int GetWidth(){
         return width;
@@ -149,17 +148,21 @@ public class PaintView extends View {
     }
 
     public void DelSmalls(){
-        Shape MaxShape = shapes.pop();
-        int max = MaxShape.GetArea();
-        while(!shapes.empty()){
+        if(!shapes.empty()) {
+            Shape MaxShape = shapes.pop();
+            double max = MaxShape.GetArea();
+            while (!shapes.empty()) {
 
-            if(shapes.peek().GetArea() > max){
-                MaxShape = shapes.peek();
-                max = shapes.peek().GetArea();
+                if (shapes.peek().GetArea() > max) {
+                    MaxShape = shapes.peek();
+                    max = shapes.peek().GetArea();
+                }
+                shapes.pop();
+                invalidate();
             }
-            shapes.pop();
+            shapes.push(MaxShape);
+            invalidate();
         }
-        shapes.push(MaxShape);
     }
     public void DelBig(){
         double max=0;

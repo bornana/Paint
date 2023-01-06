@@ -65,16 +65,17 @@
 
 
     <Button
-        android:id="@+id/btnGreen"
+        android:id="@+id/btnDelSmalls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="10dp"
-        android:backgroundTint="#4CAF50"
+        android:backgroundTint="#A4A5A4"
         android:onClick="changeColor"
         android:padding="10dp"
         android:tag="#4CAF50"
-        android:textSize="20dp" />
+        android:text = "delete all smallest shapes"
+        android:textSize="9dp" />
 
     <Button
         android:id="@+id/btnLine"
@@ -118,14 +119,6 @@
         android:text="Path"
         android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btnPoint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/btnCircle"
-        android:background="@drawable/clear"
-        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnSurface"

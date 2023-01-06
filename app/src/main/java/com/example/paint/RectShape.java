@@ -1,7 +1,6 @@
 package com.example.paint;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 
 public class RectShape extends ClosedShape  {
@@ -21,8 +20,8 @@ public class RectShape extends ClosedShape  {
         yEnd = ye;
     }
 
-    public int GetArea(){
-        return Math.abs(xEnd - x) * Math.abs(yEnd * y);
+    public double GetArea(){
+        return (xEnd - x) * (yEnd - y);
     }
     @Override
     public void draw(Canvas canvas, Paint paint) {

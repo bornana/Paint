@@ -21,7 +21,7 @@ public abstract class Shape {
 
     public abstract void updatePoint(int xe,int ye);
 
-    public abstract int GetArea();
+    public abstract double GetArea();
 
     public void draw(Canvas canvas, Paint paint)
     {

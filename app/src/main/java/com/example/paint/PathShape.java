@@ -37,7 +37,7 @@ public class PathShape extends Shape {
            path.moveTo(x, y);
 
     }
-    public int GetArea(){
+    public double GetArea(){
         return 0;
     }
 

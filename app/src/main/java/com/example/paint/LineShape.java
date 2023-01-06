@@ -21,7 +21,7 @@ public class LineShape extends Shape {
         yEnd = ye;
 
     }
-    public int GetArea(){
+    public double GetArea(){
         return 0;
     }
 

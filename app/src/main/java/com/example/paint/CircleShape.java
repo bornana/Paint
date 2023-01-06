@@ -17,8 +17,8 @@ public class  CircleShape extends ClosedShape {
         xEnd = x;
         yEnd = y;
     }
-    public int GetArea(){
-        return (int)Math.round((xEnd-x)*(xEnd-x)+(yEnd-y)*(yEnd-y) * Math.PI);
+    public double GetArea(){
+        return Math.pow(radius, 2) * Math.PI;
     }
 
     @Override
@@ -27,7 +27,7 @@ public class  CircleShape extends ClosedShape {
         yEnd = ye;
         cx=(x+xEnd)/2;
         cy=(y+yEnd)/2;
-        radius=Math.sqrt((xEnd-x)*(xEnd-x)+(yEnd-y)*(yEnd-y));
+        radius=Math.sqrt(Math.pow((xe-x),2)+Math.pow((ye-y),2));
     }
 
     @Override
@@ -35,11 +35,11 @@ public class  CircleShape extends ClosedShape {
         super.draw(canvas, paint);
         if(fill==true)
             paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(cx, cy, (float) radius, paint);
+        canvas.drawCircle(x, y, (float)radius, paint);
     }
     @Override
     public double GetSurface(){
-        return radius*radius*Math.PI;
+        return Math.pow(radius, 2)*Math.PI;
     }
 
 }

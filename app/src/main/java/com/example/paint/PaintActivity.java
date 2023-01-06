@@ -31,7 +31,7 @@ public class PaintActivity extends AppCompatActivity {
         Fillbtn=(Button) findViewById(R.id.fill);
         paintView = new PaintView(this);
         frame.addView(paintView);
-        undo=(Button) findViewById(R.id.btnPoint);
+        undo=(Button) findViewById(R.id.btnDelSmalls);
         mDefaultColor= ContextCompat.getColor(PaintActivity.this,R.color.design_default_color_primary);
         Colorpal=(Button)findViewById(R.id.colorPal);
         Colorpal.setOnClickListener(new View.OnClickListener() {
@@ -44,14 +44,14 @@ public class PaintActivity extends AppCompatActivity {
         undo.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                paintView.undoPath();
+                paintView.DelSmalls();
                 return false;
             }
         });
         undo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                paintView.undo();
+                paintView.DelSmalls();
             }
         });
 
@@ -71,20 +71,6 @@ public class PaintActivity extends AppCompatActivity {
             }
         });
         colorPicker.show();
-    }
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.nev_menu, menu);
-        return true;
-    }
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        super.onOptionsItemSelected(item);
-        int id=item.getItemId();
-        if(id==R.id.action_widthPlus) {
-            paintView.DelBig();
-        }
-        return true;
     }
 
     public void addLine(View view) {
